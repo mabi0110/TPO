@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="lib">
+    <archive path="C:/Users/Gosia/Desktop/TPO1_BM_S22275/lib/gson-2.8.2.jar" />
+    <archive path="C:/Users/Gosia/Desktop/TPO1_BM_S22275/lib/javafx-swt.jar" />
+    <archive path="C:/Users/Gosia/Desktop/TPO1_BM_S22275/lib/javafx.web.jar" />
+    <archive path="C:/Users/Gosia/Desktop/TPO1_BM_S22275/lib/javafx.base.jar" />
+    <archive path="C:/Users/Gosia/Desktop/TPO1_BM_S22275/lib/javafx.fxml.jar" />
+    <archive path="C:/Users/Gosia/Desktop/TPO1_BM_S22275/lib/javafx.media.jar" />
+    <archive path="C:/Users/Gosia/Desktop/TPO1_BM_S22275/lib/javafx.swing.jar" />
+    <archive path="C:/Users/Gosia/Desktop/TPO1_BM_S22275/lib/javafx.controls.jar" />
+    <archive path="C:/Users/Gosia/Desktop/TPO1_BM_S22275/lib/javafx.graphics.jar" />
+    <archive path="C:/Users/Gosia/Desktop/TPO1_BM_S22275/lib/org.json-chargebee-1.0.jar" />
+  </library>
+</eclipse-userlibraries>
+
