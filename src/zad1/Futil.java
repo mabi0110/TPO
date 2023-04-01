@@ -20,24 +20,24 @@ public class Futil {
         Path startPath = Paths.get(dirName);
         Path resultPath = Paths.get(resultFileName);
 
-        Charset csIn = Charset.forName("Cp1250");
-        Charset csOut = Charset.forName("UTF-8");
+        Charset charsetIn = Charset.forName("Cp1250");
+        Charset charsetOut = Charset.forName("UTF-8");
 
-        List<Path> plist = new ArrayList<>();
+        List<Path> pathsList = new ArrayList<>();
         try (Stream<Path> paths = Files.walk(startPath)) {
             //paths.forEach(p -> System.out.println(p));
-            plist = paths.filter(Files::isRegularFile).collect(Collectors.toList());
+            pathsList = paths.filter(Files::isRegularFile).collect(Collectors.toList());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        try (FileChannel fcOut = FileChannel.open(resultPath, CREATE, TRUNCATE_EXISTING, WRITE)) {
-            for (Path p: plist) {
-                try (FileChannel fcIn = FileChannel.open(p)) {
-                    ByteBuffer bb = ByteBuffer.allocateDirect((int) fcIn.size());
-                    fcIn.read(bb);
-                    bb.flip();
-                    CharBuffer cb = csIn.decode(bb);
-                    fcOut.write(csOut.encode(cb));
+        try (FileChannel fileChanelOut = FileChannel.open(resultPath, CREATE, TRUNCATE_EXISTING, WRITE)) {
+            for (Path p: pathsList) {
+                try (FileChannel fileChanelIn = FileChannel.open(p)) {
+                    ByteBuffer byteBuffer = ByteBuffer.allocateDirect((int) fileChanelIn.size());
+                    fileChanelIn.read(byteBuffer);
+                    byteBuffer.flip();
+                    CharBuffer charBuffer = charsetIn.decode(byteBuffer);
+                    fileChanelOut.write(charsetOut.encode(charBuffer));
                 }
             }
         } catch (IOException e) {
